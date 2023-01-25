@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding:1.5rem 2% 0.5rem 6%;
+    box-shadow:10px 5px 5px rgba(0,0,0, 0.5);
+}
+.navbar .logo{
+    margin-top:-1.4rem;
+    width: 6rem;
+    height: 4rem;
+}
+ul{
+    display: flex;
+    gap: 0.5rem;
+    font-size: 1.3rem;
+    margin-left:22rem;
+}
+ul li{
+    list-style: none;
+    transition: all 0.3s;
+}
+ul li a{
+    text-decoration: none;
+    color: black;
+    padding:0.5rem 1rem;
+}
+ul li:hover a{
+    background:black;
+    color: white;
+    border-radius:20px;
+}
+
+.profile{
+    display: flex;
+    gap:0.4rem;
+    margin-left:2rem;
+}
+.profile h3{
+    font-size: 1.3rem;
+}
+.profile img{
+    width: 3rem;
+    height: 3rem;
+    margin-top:-0.5rem;
+}
+
+/*  Home section stylling*/
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:2rem  10%;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.content{
+     flex: 1 1 20rem;
+     display: flex;
+     flex-direction: column;
+     gap: 0.5rem;
+}
+.content h1{
+    font-size:2.5rem;
+    font-weight: 500;
+    color: rgb(183, 116, 246);
+    text-transform: uppercase;
+}
+.content h3{
+    font-size: 2rem;
+    color: rgb(100, 100, 100);
+}
+.content p{
+    width: 500px;
+    color:#888;
+    font-size:1.3rem;
+    
+}
