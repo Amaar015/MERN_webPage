@@ -55,23 +55,23 @@ ul li:hover a{
     justify-content: center;
     align-items: center;
     padding:2rem  10%;
-    gap: 1rem;
+    /* gap: 3rem; */
     flex-wrap: wrap;
 }
 .content{
-     flex: 1 1 20rem;
+     flex: 1 1 25rem;
      display: flex;
      flex-direction: column;
      gap: 0.5rem;
 }
 .content h1{
-    font-size:2.5rem;
+    font-size:3rem;
     font-weight: 500;
-    color: rgb(183, 116, 246);
+    color: #b774f6;
     text-transform: uppercase;
 }
 .content h3{
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: rgb(100, 100, 100);
 }
 .content p{
@@ -79,4 +79,61 @@ ul li:hover a{
     color:#888;
     font-size:1.3rem;
     
+}
+.content .buttons{
+    margin-top:0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+.btn{
+    padding:0.6rem 1.5rem;
+    background: transparent;
+    border:2px solid #b774f6;
+    color: #444;
+    font-size:1.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.btn:hover{
+ color: #b774f6;
+}
+
+.home .image{
+    flex:1 1 20rem;
+    overflow: hidden;
+    margin-left:6rem;
+    margin-top:1rem;
+}
+
+/* home feature */
+
+.features{
+    margin-top:2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding:2rem 4rem ;
+}
+.cards{
+    background: #b774f6;
+    text-align: center;
+    padding:0.5rem 0.5rem;
+    border-radius:20px;
+}
+
+.cards i{
+    font-size: 2.5rem;
+    color: #444;
+
+}
+.cards h3{
+    margin-top:1rem;
+    font-size:1.5rem;
+    color: #fff;
+}
+.cards p{
+    padding:1rem 0.5rem;
+    font-size:1.3rem;
 }
