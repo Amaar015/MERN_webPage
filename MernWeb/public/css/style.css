@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    overflow-x: hidden;
+}
 .navbar{
     display: flex;
     justify-content: space-between;
@@ -136,4 +139,97 @@ ul li:hover a{
 .cards p{
     padding:1rem 0.5rem;
     font-size:1.3rem;
+}
+
+/* About page*/
+
+.about .main{
+    background: url('../image/nature.jpg');
+    width:100vw;
+    height: 60vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+.about .main h1{
+   font-size:3rem;
+   color: #fff;
+   text-align: center;
+   padding-top:4rem;
+}
+.about .main p{
+    font-size:1.5rem;
+    color: black;
+    padding-top:2rem;
+    width:600px;
+    margin-left:28%;
+    text-align: center;
+ }
+ .about .main .btn{
+    padding:0.6rem 2rem;
+    font-size: 1rem;
+    border:2px solid black;
+    color: black;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.4s;
+    margin-left:38rem;
+    margin-top: 2rem;
+ }
+ .about .main .btn:hover{
+          background: black;
+          color: white;
+ }
+
+ /* New Letter */
+.news{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    /* gap: rem; */
+    padding:4rem 6rem;
+    background: #444;
+}
+
+.labels{
+    display: flex;
+    flex-direction: column;
+    /* gap: 1rem; */
+    text-align: center;
+    align-items: center;
+    flex: 1 1 20rem;
+}
+.labels h2{
+    font-size:2rem;
+    color: #b774f6;
+}
+
+.labels h3{
+    font-size:1.8rem;
+    color: White;
+    /* margin-top:1rem; */
+    text-decoration:underline;
+}
+.inputs{
+    flex:1 1 20rem;
+    margin-left: 1rem;
+}
+.inputs .emails{
+    width: 18rem;
+    height: 3rem;
+    font-size:1.3rem;
+    outline: none;
+}
+.inputs .btn{
+    color: #b774f6;
+    height: 3rem;
+    font-size:1.3rem;
+    margin-left: -0.5rem;
+    transition: all 0.4s;
+}
+.inputs .btn:hover{
+    color: white;
 }
