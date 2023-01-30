@@ -47,20 +47,19 @@ const UserBioSchema=new mongoose.Schema({
 })
 
 // to generate token 
-UserBioSchema.methods.generateAutoToken =async (req,res)=>{
-  
+UserBioSchema.methods.generateAutoToken =async function(){
     try{
-       console.log(this._id)
-    
-       const token=jwt.sign({_id:this._id.toString()},"helloiamammarrazahowareyoubrother")
+       // console.log(this._id)
+       const token=jwt.sign({_id:this._id.toString()}, "mynameistheamaarandiamundergraduatestudent")
        this.tokens=this.tokens.concat({token:token});
        await this.save();
        return token;
     }catch(err){
-      console.log(err);
-        // res.send(`the error is ${err}`)
+            res.send(`the error is ${err}`)
+           //  console.log(`the error is ${err}`);
     }
 }
+
 
 UserBioSchema.pre("save", async function(next){
    if(this.isModified("password")){

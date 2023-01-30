@@ -5,23 +5,27 @@ const multer =require('multer');
 const path=require('path');
 const fs=require('fs');
 const { Console } = require('console');
-const User = require('../models/models');
 const bcrypt=require('bcryptjs');
-
+const cookieparser=require("cookie-parser")
+const auth=require('../midleware/auth')
 require("../db/conn")
+const jwt=require('jsonwebtoken');
 
-
+router.use(cookieparser());
 
 router.get('/',(req,res)=>{
+    console.log(`the cookies is the how are you`+req.cookies.jwt)
+
     res.render('index');
 });
-router.get('/about',(req,res)=>{
+router.get('/about',auth,(req,res)=>{
+    console.log(`the cookies is the ${req.cookies.jwt}`)
     res.render('about');
 });
-router.get('/services',(req,res)=>{
+router.get('/services',auth,(req,res)=>{
     res.render('services');
 });
-router.get('/products',(req,res)=>{
+router.get('/products',auth, (req,res)=>{
     res.render('products');
 });
 router.get('/login',(req,res)=>{
@@ -90,18 +94,22 @@ router.post('/login',async(req,res)=>{
        const useremail=await UserBio.findOne({email});
 
         const isMatch=await bcrypt.compare(password,useremail.password);
+        const token= await useremail.generateAutoToken();
+                // console.log(`the token is ${token}`)
+                
+                res.cookie("user_login",token,{
+                    expires:new Date(Date.now()+ 3000000),
+                    httpOnly:true
+                });
         if(isMatch){
             res.status(201).render('index');
         }else{
-            res.status.send('Password or email is invalid')
+            res.send("Email or Password is invalid")
         }
-
-       //    console.log(useremail);
-    //    res.redirect('/');
     }catch(err){
-        res.render(err);
+        res.status(404).send("Email or Password is invalid")
     }
-})
+ })
 
 router.get('*',(req,res)=>{
     res.render('error');
