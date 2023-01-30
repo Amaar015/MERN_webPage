@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    {{>Navbar}}
+ <div class="forms form-r">
+    <h2>Register Here</h2>
+    <form action="/add" method="POST" enctype="multipart/form-data">
+        <input class="inputss" type="text" placeholder="Enter Name" id="name" name="name">
+         <input class="inputss" type="email" placeholder="Email Adress" id="email" name="email">
+         <input class="inputss" type="number" placeholder="Enter phone no:" id="phone" name="phone">
+        <input class="inputss" type="password" placeholder="Password" name="password" id="password">
+        <input class="inputss" type="password" placeholder="Confirm Password" name="Cpassword" id="Cpassword">
+        <input type="file" name="image" class="image">
+        <input class="btn" type="submit" value="Register">
+    </form>
+    <a href="/login">LogIn</a>
+    </div>
+</body>
+</html>
